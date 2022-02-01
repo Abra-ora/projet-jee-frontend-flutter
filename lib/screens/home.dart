@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:studi_kasus/flask_api.dart';
+import 'package:studi_kasus/screens/login.dart';
 import '../widgets/card.dart';
 
 class MyHomePage extends StatefulWidget {
   final String title;
 
-  MyHomePage({this.title = 'Demo'});
+  MyHomePage({this.title = 'K-means Algorithme'});
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -18,6 +19,22 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           backgroundColor: Colors.black45,
           title: Text(widget.title),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.logout),
+              tooltip: 'Show Snackbar',
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('You are logged out')));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(),
+                  ),
+                );
+              },
+            ),
+          ],
         ),
         body: Container(
             padding: EdgeInsets.all(16.0),

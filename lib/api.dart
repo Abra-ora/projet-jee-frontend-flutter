@@ -26,7 +26,7 @@ class api extends ChangeNotifier{
     _LogedInStatus = value;
   }
 
-   status get RzgistredInStattus => _RzgistredInStattus;
+  status get RzgistredInStattus => _RzgistredInStattus;
 
   set RzgistredInStattus(status value) {
     _RzgistredInStattus = value;
@@ -43,7 +43,6 @@ class api extends ChangeNotifier{
         'Content-Type': 'application/json; charset=UTF-8',
       }
     );
-
   }
 
    Future<http.Response> login(data) async {
@@ -57,8 +56,5 @@ class api extends ChangeNotifier{
            'Content-Type': 'application/json; charset=UTF-8',
          }
      );
-
    }
-
-
 }

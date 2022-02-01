@@ -81,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.person_outline),
                     border: OutlineInputBorder(),
-                    hintText: 'Username or email',
+                    hintText: 'E-mail',
                   ),
                 ),
                 SizedBox(
@@ -142,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                         var response = await api().login(data);
                         if (response.statusCode == 200) {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text("success"),
+                            content: Text("You are logged in successfuly"),
                           ));
                           Navigator.push(
                             context,
